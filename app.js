@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-
+const mongoose = require('mongoose');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 //CORS handling
+mongoose.connect('mongodb+srv://hashimsaffarini044:lxrk8ifGOs7hJO2h@node-rest-shop.agn3cgz.mongodb.net/');
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
